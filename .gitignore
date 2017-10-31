@@ -91,6 +91,10 @@ fabric.properties
 # build/
 develop-eggs/
 dist/
+static/css/
+static/js/
+template/index.html
+
 downloads/
 eggs/
 .eggs/
