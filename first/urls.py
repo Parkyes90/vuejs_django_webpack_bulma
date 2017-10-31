@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from main.views import BaseView
+from backend.main.views import BaseView
 
 urlpatterns = [
     url(r'^(\w*)$', BaseView.as_view()),
