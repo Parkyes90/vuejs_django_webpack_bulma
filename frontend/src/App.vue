@@ -1,14 +1,27 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <div>
+        <Header></Header>
+        <header-title></header-title>
+        <div class="container">
+          <router-view></router-view>
+        </div>
+        <Footer></Footer>
+    </div>
+
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
-</script>
+  import Header from './header/Header'
+  import HeaderTitle from './header/HeaderTitle'
+  import Footer from './footer/Footer'
+  import Main from './main/Main'
 
-<style>
-</style>
+  export default {
+    components: {
+      Header: Header,
+      HeaderTitle: HeaderTitle,
+      Footer: Footer,
+      Main: Main
+    }
+  }
+</script>

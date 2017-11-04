@@ -193,11 +193,11 @@
 
           </p>
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.6.0/bulma-0.6.0.zip">
+            <a class="button is-info" href="https://github.com/jgthms/bulma/releases/download/0.6.0/bulma-0.6.0.zip">
               <span class="icon">
-                <i class="fa fa-download"></i>
+                <i class="fa fa-sign-in"></i>
               </span>
-              <span>Download</span>
+              <span>Sign Up / Sign In</span>
             </a>
           </p>
         </div>
@@ -218,5 +218,3 @@
   @import '../assets/font-awesome-4.7.0/css/font-awesome.css';
   @import '../assets/scss/Header';
 </style>
-
-
