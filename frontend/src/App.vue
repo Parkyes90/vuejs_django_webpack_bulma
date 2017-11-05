@@ -1,11 +1,11 @@
 <template>
     <div>
-        <Header></Header>
-        <header-title></header-title>
+        <appHeader></appHeader>
+        <app-header-title></app-header-title>
         <div class="container">
           <router-view></router-view>
         </div>
-        <Footer></Footer>
+        <appFooter></appFooter>
     </div>
 
 </template>
@@ -14,14 +14,12 @@
   import Header from './header/Header'
   import HeaderTitle from './header/HeaderTitle'
   import Footer from './footer/Footer'
-  import Main from './main/Main'
 
   export default {
     components: {
-      Header: Header,
-      HeaderTitle: HeaderTitle,
-      Footer: Footer,
-      Main: Main
+      appHeader: Header,
+      appHeaderTitle: HeaderTitle,
+      appFooter: Footer
     }
   }
 </script>

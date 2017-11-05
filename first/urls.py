@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
+
+from rest_framework.urlpatterns import format_suffix_patterns
+from backend.board.views import board
 from backend.main.views import BaseView
+
 
 urlpatterns = [
     url(r'^(\w*)$', BaseView.as_view()),
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^board/', board.BoardView.as_view())
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns = format_suffix_patterns(urlpatterns)
+

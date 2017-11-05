@@ -14,8 +14,6 @@ Vue.use(Buefy, {
 
 Vue.use(VueResource)
 
-Vue.http.options.root = 'localhost/'
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
