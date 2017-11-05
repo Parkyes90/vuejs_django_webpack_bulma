@@ -5,6 +5,7 @@
 *.pot
 *.pyc
 __pycache__/
+migrations
 local_settings.py
 db.sqlite3
 media
@@ -185,3 +186,10 @@ first_env
 .mypy_cache/
 
 # End of https://www.gitignore.io/api/python,django,pycharm
+backend/board/__init__.py 제거할 예정
+backend/board/admin.py 제거할 예정
+backend/board/apps.py 제거할 예정
+backend/board/models.py 제거할 예정
+backend/board/tests.py 제거할 예정
+backend/board/views/board.py 제거할 예정
+template/ 제거할 예정
