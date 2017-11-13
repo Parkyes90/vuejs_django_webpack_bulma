@@ -16,6 +16,7 @@ class BoardView(View):
         post = Post.objects.order_by('-create_date').values_list(
             'id', 'title', 'country', 'content', 'create_date', 'user', 'image', 'filtered_image'
         )
+        print(post)
 
         data = []
 
