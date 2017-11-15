@@ -26,7 +26,7 @@ from backend.main.views import BaseView
 urlpatterns = [
     url(r'^(\w*)$', BaseView.as_view()),
     url(r'^admin/', admin.site.urls),
-    url(r'^board/(\w*)$', board.BoardView.as_view())
+    url(r'^rpc/time$', board.get_time),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

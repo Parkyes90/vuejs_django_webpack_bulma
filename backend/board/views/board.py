@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
+import time
 from django.utils.decorators import method_decorator
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
 
 from ..models import Post
 from first.view import View
@@ -7,29 +11,7 @@ from ...deco import json_encode
 # Create your views here.
 
 
-class BoardView(View):
-    @method_decorator(json_encode)
-    def listup(self, request):
-        return self._listup(request)
-
-    def _listup(self, request):
-        post = Post.objects.order_by('-create_date').values_list(
-            'id', 'title', 'country', 'content', 'create_date', 'user', 'image', 'filtered_image'
-        )
-        print(post)
-
-        data = []
-
-        for id, title, country, content, create_date, user, image, filtered_image in post:
-            data.append({
-                'id': id,
-                'title': title,
-                'country': country,
-                'content': content,
-                'create_date': create_date,
-                'user': user,
-                'image': image,
-                'filtered_image': filtered_image
-            })
-
-        return {'success': True, 'totalCount': len(data), 'data': data}
+@api_view(['GET', 'POST'])
+@renderer_classes((JSONRenderer,))
+def get_time(request):
+    return Response((int(time.time())))
