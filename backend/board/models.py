@@ -20,6 +20,9 @@ class Post(models.Model):
                                        upload_to='upload/%Y/%m/%d/filtered')
 
     # category = models.ForeignKey(Categories)
+    class Meta:
+        app_label = 'board'
+        db_table = 'POST'
 
     def __str__(self):
         return self.title
