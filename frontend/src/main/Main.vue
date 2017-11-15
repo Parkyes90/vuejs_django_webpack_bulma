@@ -16,7 +16,7 @@
     },
     methods: {
       listup () {
-        axios.get('/rpc/time')
+        axios.get('/rpc/list_up')
           .then(res => console.log(res.data))
           .catch(error => console.log(error))
       }

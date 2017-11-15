@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^(\w*)$', BaseView.as_view()),
     url(r'^admin/', admin.site.urls),
     url(r'^rpc/time$', board.get_time),
+    url(r'^rpc/list_up$', board.list_up),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
