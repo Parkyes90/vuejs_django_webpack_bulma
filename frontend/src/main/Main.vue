@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button type=button :click="listup()">as</button>
+    <div v-for="post in posts">
+      {{ post }}
+    </div>
     <app-main-template></app-main-template>
   </div>
 </template>
@@ -14,12 +16,22 @@
     components: {
       appMainTemplate: MainTemplate
     },
-    methods: {
-      listup () {
-        axios.get('/rpc/list_up')
-          .then(res => console.log(res.data))
-          .catch(error => console.log(error))
+    data () {
+      return {
+        posts: []
       }
+    },
+    created () {
+      axios.get('/rpc/list_up')
+        .then(res => {
+          this.posts = res.data.data
+          let j = 1
+          for (let post of this.posts) {
+            post.idx = j
+            j++
+          }
+        })
+        .catch(error => console.log(error))
     }
   }
 </script>
